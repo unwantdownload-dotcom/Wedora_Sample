@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wedora-dark: #1c100b;
+  --color-wedora-rich: #2d1810;
+  --color-wedora-medium: #4a2818;
+  --color-wedora-caramel: #8c5331;
+  --color-wedora-gold: #c59b27;
+  --color-wedora-goldLight: #e6c875;
+  --color-wedora-cream: #fdfaf5;
+  --color-wedora-creamSoft: #f7f1e6;
+  --color-wedora-sand: #ecdac2;
+  --color-wedora-accent: #b83b3b;
+
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
+}
+
+body {
+  background-color: var(--color-wedora-cream);
+  color: var(--color-wedora-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wedding-site-background {
+  background-color: var(--color-wedora-cream);
+  background-image:
+    radial-gradient(ellipse at 8% 14%, rgba(230, 200, 117, 0.13), transparent 28rem),
+    radial-gradient(ellipse at 94% 52%, rgba(184, 59, 59, 0.045), transparent 30rem),
+    radial-gradient(ellipse at 48% 100%, rgba(197, 155, 39, 0.07), transparent 36rem);
+  background-attachment: fixed;
+}
+
+.wedding-hero {
+  isolation: isolate;
+  background-image:
+    radial-gradient(ellipse at 16% 85%, rgba(184, 83, 49, 0.24), transparent 38%),
+    radial-gradient(ellipse at 86% 16%, rgba(197, 155, 39, 0.17), transparent 34%),
+    linear-gradient(to bottom, var(--color-wedora-dark), var(--color-wedora-rich), var(--color-wedora-medium));
+}
+
+.wedding-hero::before,
+.wedding-hero::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.wedding-hero::before {
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle at 8% 24%, rgba(255, 235, 190, 0.55) 0 1px, rgba(255, 235, 190, 0.1) 2px, transparent 15px),
+    radial-gradient(circle at 27% 76%, rgba(255, 235, 190, 0.42) 0 1px, rgba(255, 235, 190, 0.08) 2px, transparent 13px),
+    radial-gradient(circle at 55% 18%, rgba(255, 235, 190, 0.38) 0 1px, rgba(255, 235, 190, 0.08) 2px, transparent 12px),
+    radial-gradient(circle at 76% 74%, rgba(255, 235, 190, 0.48) 0 1px, rgba(255, 235, 190, 0.09) 2px, transparent 15px),
+    radial-gradient(circle at 93% 39%, rgba(255, 235, 190, 0.4) 0 1px, rgba(255, 235, 190, 0.08) 2px, transparent 13px);
+}
+
+.wedding-hero::after {
+  width: clamp(15rem, 36vw, 34rem);
+  aspect-ratio: 1;
+  top: -34%;
+  right: -9%;
+  border: 1px solid rgba(230, 200, 117, 0.12);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 22px rgba(230, 200, 117, 0.025),
+    0 0 0 46px rgba(230, 200, 117, 0.02),
+    inset 0 0 0 22px rgba(230, 200, 117, 0.025);
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #edd382 50%, #c59b27 100%);
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.chocolate-card-shadow {
+  box-shadow: 0 10px 30px -10px rgba(45, 24, 16, 0.12), 0 4px 6px -4px rgba(45, 24, 16, 0.05);
+}
+
+.chocolate-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(45, 24, 16, 0.2), 0 8px 12px -4px rgba(45, 24, 16, 0.08);
+}
