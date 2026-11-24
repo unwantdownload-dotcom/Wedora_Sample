@@ -122,7 +122,7 @@ Please send me customization details and ordering steps.`;
               <img
                 src={currentImage}
                 alt={product.name}
-                className={`w-full h-full object-cover transition-transform duration-500 ${isZoomed ? 'scale-150 cursor-zoom-out' : 'scale-100 hover:scale-105'}`}
+                className={`w-full h-full object-contain transition-transform duration-500 ${isZoomed ? 'scale-150 cursor-zoom-out' : 'scale-100'}`}
               />
             </div>
 
@@ -159,7 +159,7 @@ Please send me customization details and ordering steps.`;
                       : 'border-wedora-caramel/20 opacity-70 hover:opacity-100'
                   }`}
                 >
-                  <img src={img.image_url} alt="" className="w-full h-full object-cover" />
+                  <img src={img.image_url} alt="" className="w-full h-full object-contain" />
                   {img.view_tag && (
                     <span className="absolute bottom-1 left-1 bg-wedora-dark/80 text-white text-[9px] font-semibold px-1.5 py-0.5 rounded">
                       {img.view_tag}

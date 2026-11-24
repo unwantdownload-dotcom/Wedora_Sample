@@ -332,7 +332,7 @@ export const ProductModal = ({ product, onClose, onSaved }) => {
                   <div key={idx} className="rounded-xl border border-wedora-caramel/20 bg-white p-2 space-y-2">
                     <div className="relative group rounded-lg overflow-hidden">
                       <div className="aspect-square">
-                        <img src={img.image_url} alt="" className="w-full h-full object-cover" />
+                        <img src={img.image_url} alt="" className="w-full h-full object-contain" />
                       </div>
                       {img.is_primary && (
                         <span className="absolute top-1.5 left-1.5 bg-emerald-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow">

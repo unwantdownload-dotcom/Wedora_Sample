@@ -294,7 +294,7 @@ export const AdminDashboardPage = () => {
                         <td className="py-3 px-4">
                           <div className="w-12 h-12 rounded-lg bg-wedora-cream overflow-hidden border border-wedora-caramel/20">
                             {primaryImg ? (
-                              <img src={primaryImg} alt="" className="w-full h-full object-cover" />
+                              <img src={primaryImg} alt="" className="w-full h-full object-contain" />
                             ) : (
                               <div className="w-full h-full flex items-center justify-center text-wedora-dark/40 font-bold text-xs">
                                 No img
