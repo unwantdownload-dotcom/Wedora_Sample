@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation, useParams } from 'react-router-dom';
 import { DataProvider } from './context/DataContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -10,10 +10,27 @@ import { ContactPage } from './pages/ContactPage';
 import { AdminLoginPage } from './pages/AdminLoginPage';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
+const ProductDetailRoute = () => {
+  const { id } = useParams();
+
+  return <ProductDetailPage key={id} />;
+};
+
 function App() {
   return (
     <DataProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <div className="wedding-site-background min-h-screen flex flex-col bg-wedora-cream text-wedora-dark selection:bg-wedora-gold/30">
           <Navbar />
           <main className="flex-grow">
@@ -21,7 +38,7 @@ function App() {
               {/* Customer Facing Routes */}
               <Route path="/" element={<HomePage />} />
               <Route path="/categories" element={<CategoriesPage />} />
-              <Route path="/product/:id" element={<ProductDetailPage />} />
+              <Route path="/product/:id" element={<ProductDetailRoute />} />
               <Route path="/contact" element={<ContactPage />} />
 
               {/* Admin Portal Routes */}

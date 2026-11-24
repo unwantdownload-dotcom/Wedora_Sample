@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useData } from '../context/DataContext';
 import { 
@@ -17,6 +17,17 @@ export const ProductDetailPage = () => {
   const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
+  const galleryImageCount = product?.images?.length || 0;
+
+  useEffect(() => {
+    if (galleryImageCount <= 1 || isZoomed) return undefined;
+
+    const timerId = window.setTimeout(() => {
+      setActiveImageIndex(index => (index + 1) % galleryImageCount);
+    }, 4000);
+
+    return () => window.clearTimeout(timerId);
+  }, [id, galleryImageCount, activeImageIndex, isZoomed]);
 
   if (loading) {
     return (
